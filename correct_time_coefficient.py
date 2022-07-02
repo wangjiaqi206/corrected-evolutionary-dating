@@ -1,14 +1,11 @@
-# -*- coding: utf-8 -*-
-# @Author: wjq
-# @Date:   2022-06-27 13:30:20
-# @Last Modified by:   wjq
-# @Last Modified time: 2022-06-29 14:06:42
-
 import copy
+import sys
 from itertools import islice
 from functools import reduce
 
-demo_before_ks = 'demo.csv'
+# demo_before_ks = 'demo.csv'
+demo_before_ks = sys.argv[1]
+
 
 before_species_ks = {}
 before_divergence_ks = {}
