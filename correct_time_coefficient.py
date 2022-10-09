@@ -62,6 +62,7 @@ def divergence_correct(species_ks, divergence_ks, lowest):
         spec1, spec2 = k.split("_")
         coeff = low_ks/float(divergence_ks[k])
         coefficient[spec2] = 2*coeff-1
+        coefficient[k] = coeff
     
     for key in species_ks:
         for s in species_ks[key]:
@@ -105,12 +106,15 @@ middle_name = ['name']
 
 while True:
     lowest= input("Please enter the species with the lowest Ks value:[spec/end]")
-    low_ks = input("Please enter the lowest Ks value[ks_value/no]:")
-    if low_ks != 'no':
-        middle_wgd[lowest] = [low_ks]
 
     if lowest == 'end':
         break
+
+    low_ks = input("Please enter the lowest Ks value[ks_value/no]:")
+
+    if low_ks != 'no':
+        middle_wgd[lowest] = [low_ks]
+
     middle_name.append(lowest)
 
     if '_' not in lowest:
